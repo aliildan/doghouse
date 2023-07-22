@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "1cb91e91-f609-438f-8e06-955a47068e41",
+		"name": "doghouse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3806834"
+	},
+	"item": [
+		{
+			"name": "http://localhost:62000/api/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\":\"test user\",\n\"email\":\"test.user@dummy.com\",\n\"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:62000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "62000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:62000/api/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"email\":\"test.user@dummy.com\",\n\"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:62000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "62000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:62000/api/refresh",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjYyMDAwL2FwaS9sb2dpbiIsImlhdCI6MTY4OTk5MjMyMCwiZXhwIjoxNjg5OTk1OTIwLCJuYmYiOjE2ODk5OTIzMjAsImp0aSI6InEzczZaU1RneThWbG1KbFYiLCJzdWIiOiI3IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.wRXbWWAbhnVEm26i9ggmylP9YL4C4p98z_gzYB4wBqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:62000/api/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "62000",
+					"path": [
+						"api",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:62000/api/adddog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjYyMDAwL2FwaS9sb2dpbiIsImlhdCI6MTY4OTk5MjMyMCwiZXhwIjoxNjg5OTk1OTIwLCJuYmYiOjE2ODk5OTIzMjAsImp0aSI6InEzczZaU1RneThWbG1KbFYiLCJzdWIiOiI3IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.wRXbWWAbhnVEm26i9ggmylP9YL4C4p98z_gzYB4wBqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"fino\",\n    \"breed\" : \"toy poodle\",\n    \"age\" : \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:62000/api/adddog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "62000",
+					"path": [
+						"api",
+						"adddog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:62000/api/listdogs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjYyMDAwL2FwaS9sb2dpbiIsImlhdCI6MTY4OTk5MjMyMCwiZXhwIjoxNjg5OTk1OTIwLCJuYmYiOjE2ODk5OTIzMjAsImp0aSI6InEzczZaU1RneThWbG1KbFYiLCJzdWIiOiI3IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.wRXbWWAbhnVEm26i9ggmylP9YL4C4p98z_gzYB4wBqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:62000/api/listdogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "62000",
+					"path": [
+						"api",
+						"listdogs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
