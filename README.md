@@ -29,8 +29,7 @@ add your own hostname on your `/etc/hosts`
  PostgreSQL | **host:** `localhost`; **port:** `62014`  
 
 ## Hosts within your environment ##
-
-You'll need to configure your application to use any services you enabled:
+> The first time you run the containers, it might take a while for the database to get initialised and composer/npm packages to get installed. Check the logs (`docker-compose logs -f`) to know when your app is ready.
 
  Service  | Hostname | Port number    
 ----------|----------|----------------
