@@ -6,10 +6,8 @@ if [ ! -d "/app/vendor" ]; then
     echo "Installing composer dependencies"
     cd /app && composer install
 fi
-echo "Running migrations"
-php artisan migrate &
-sleep 5 &
-php artisan db:seed &
+echo "Running migrations and user seed"
+php artisan migrate --seed &
 php-fpm  -F &
 status=$?
 if [ $status -ne 0 ]; then
