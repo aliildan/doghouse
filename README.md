@@ -43,6 +43,7 @@ You'll need to configure your application to use any services you enabled:
 **Note:** you need to cd first to where your docker-compose.yml file lives.
 
 * Start containers in the background: `docker-compose up -d`
+### 
 * Start containers on the foreground: `docker-compose up`. You will see a stream of logs for every container running.
   ctrl+c stops containers.
 * To check the logs `docker-compose logs -f --tail=100`

@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # Start the first process
-echo "Running entrypoint.sh"
+echo "Running start.sh"
 if [ ! -d "/app/vendor" ]; then
     echo "Installing composer dependencies"
     cd /app && composer install
 fi
 echo "Running migrations"
 php artisan migrate &
+sleep 5 &
 php artisan db:seed &
 php-fpm  -F &
 status=$?
