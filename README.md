@@ -121,3 +121,38 @@ postman
     * You can find the tests under the following path:
         * tests/Feature/AuthControllerTest.php
         * tests/Feature/DogControllerTest.php
+
+ ## Task ##
+Create a laravel project which makes two REST endpoints available. The protected endpoint
+/adddog accepts a dog object and creates a new DB entry in the dogs table. A second
+protected endpoint /listdogs returns a list of dogs stored in the DB.
+
+Details:
+● Authorization
+Both endpoints should only accept a request in case the &quot;secret&quot; is sent and matches
+the secret defined in the laravel app (env). The secret is sent as a HTTP header.
+○ If the secrets do not match, the endpoints should return http 403.
+○ The /adddog endpoint returns a 200 success message.
+● Data Storage
+○ Data is stored using PostgresDB.
+○ Create the DB schema using Laravel migrations
+○ All Dog data is stored in a JSON column.
+○ Each Dog has at least a “name” property.
+○ The DB is optimised so it can store and query a significant amount of data.
+● /adddog Endpoint
+○ Accepts a post request using the described authorization.
+○ The post request includes a json Dog object.
+○ The request is validated before it is processed.
+○ The endpoint stores the Dog object in the respective DB column.
+○ The storage operation is performed async, meaning the initial request returns
+while the store operation is still running.
+○ To simulate a long store operation, the application waits 10 seconds before
+the store is executed.
+
+● /listdogs Endpoint
+○ Accepts a GET request using the described authorization.
+○ The endpoint returns a list of Dog objects
+○ The endpoint accepts a query parameter “name” which filters the returned
+Dogs by their name.
+○ The endpoint returns a max. of 30 Dogs.
+● Error handling is implemented where necessary
